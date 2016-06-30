@@ -44,7 +44,7 @@ for(var name in Game.rooms) {
             var upgrader = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
                 // console.log('Harvesters: ' + harvesters.length);
             if(upgrader.length < 1 && harvesters.length > 1) {
-                var newName = Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE], 'Upgrader'+(upgraders.length+1).toString(), {role: 'upgrader'});
+                var newName = Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE], 'Upgrader'+(upgrader.length+1).toString(), {role: 'upgrader'});
             console.log('Spawning new upgrader: ' + newName);
             }  
         }
