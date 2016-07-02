@@ -2,10 +2,12 @@ var RoomController = require('RoomController');
 
 module.exports.loop = function() {
 
+            //RoomLoop
 	for ( var name in Game.rooms) {
 		RoomController.run(name);
 	}
 
+    //CreepLoop
 	for ( var name in Game.creeps) {
 		var creep = Game.creeps[name];
 		if (creep.memory.role == 'harvester') {
