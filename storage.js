@@ -15,11 +15,12 @@ run: function(nameOfRoom) {
             //console.log("Max Cargo: ".concat(maxCargoEnergy));
             //console.log("ENERGY AMOUNT ".concat(totalAmountOFEnergy));
             Game.rooms[nameOfRoom].memory.ress = totalAmountOFEnergy;
+            Game.rooms[nameOfRoom].memory.arbeitercount = 0;
             Game.rooms[nameOfRoom].memory.scanned = 'true';
       }
       
       
-      // Entsheidung ob Storage gebaut werden muss
+      
       
       
 }
