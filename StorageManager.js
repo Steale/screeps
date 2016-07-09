@@ -23,6 +23,15 @@ run: function(nameOfRoom) {
       
       
 }
+
+
 };
+
+
+function calculateAmountOfContainersNeeded() {
+    
+    
+}
+
 
 module.exports = storageManager;
