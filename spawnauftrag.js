@@ -18,7 +18,7 @@ run: function(nameOfRoom) {
             if(harvesters.length < 2) {
                 spawnArbeiter('harvester',nameOfRoom)
             }
-            if(builder.length < 1 && harvesters.length > 1 && upgrader.length >0) {
+            if(builder.length < 2 && harvesters.length > 1 && upgrader.length >0) {
               spawnArbeiter('builder',nameOfRoom)
             }    
             if(upgrader.length < 1 && harvesters.length > 1) {
@@ -35,9 +35,9 @@ run: function(nameOfRoom) {
 
 function spawnArbeiter(art,nameOfRoom) {
     var creeps = _.filter(Game.creeps,(creep) => creep.memory.role != null);
-    var newName = Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE],art+(creeps.length+1).toString(), {role: art});
+    var newName = Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE],art+Game.rooms[nameOfRoom].memory.arbeitercount, {role: art});
     Game.rooms[nameOfRoom].memory.arbeitercount = Game.rooms[nameOfRoom].memory.arbeitercount + 1;
-   console.log('Spawning neuen: '+art+ ' mit dem Namen ' + newName);
+   console.log('Spawning neuen: '+art+ ' mit dem Namen ' + newName+'in Raum '+ nameOfRoom );
 }
 
 
